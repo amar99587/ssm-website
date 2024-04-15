@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  outline:0;
+  user-select: none;
+  text-decoration:none;
+  -webkit-touch-callout: none; 
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  -webkit-tap-highlight-color:#ffffff00;
+  font-family:"Readex Pro", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
