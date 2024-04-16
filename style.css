@@ -11,7 +11,7 @@
   -ms-user-select:none;
   -webkit-tap-highlight-color:#ffffff00;
   scroll-behavior: smooth;
-/*   font-family:"Readex Pro", sans-serif; */
+  font-family:"Readex Pro", sans-serif;
 }
 
 body {
