@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html class="-dark" lang="en">
+<html class="" lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laziri</title>
-  <link rel="icon" href="img/logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="tailwind.js"></script>
-  <link rel="stylesheet" href="style.css">
   <style type="text/tailwindcss">
     @tailwind base;
     @tailwind utilities;
@@ -123,62 +121,69 @@
     @layer components {}
   </style>
   <meta name="description" content="Laziri is a tool for batter manage small and support schools">
+  <link rel="icon" href="img/logo.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <nav class="sticky top-0 z-50 w-full bg-[#f5f5f7] bg-opacity-50 backdrop-blur-lg dark:bg-slate-900/75 flex items-center gap-36 p-4">
-    <h3 class="font-bold w-full logo-font-family" translate="no">LAZIRI</h3>
+  <nav
+    class="sticky top-0 z-50 w-full bg-[#f5f5f7] bg-opacity-50 backdrop-blur-lg dark:bg-slate-900/75 flex items-center gap-36 p-4">
+    <h3 class="font-medium w-full logo-font-family tracking-widest" translate="no">LAZIRI</h3>
     <div class="min-w-fit hidden md:flex items-center gap-16">
       <a class="text-sm cursor-pointer">how it works ?</a>
       <a class="text-sm cursor-pointer">need help ?</a>
       <a class="text-sm cursor-pointer">contact us</a>
     </div>
-    <div class="min-w-fit">
-      <a href="https://ssm-front.onrender.com" class="btn-black uppercase">Get Started</a>
+    <div class="min-w-fit flex items-center gap-8">
+      <svg id="moon" class="cursure-pointer" xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 256 256"><path fill="currentColor" d="M235.54 150.21a104.84 104.84 0 0 1-37 52.91A104 104 0 0 1 32 120a103.09 103.09 0 0 1 20.88-62.52a104.84 104.84 0 0 1 52.91-37a8 8 0 0 1 10 10a88.08 88.08 0 0 0 109.8 109.8a8 8 0 0 1 10 10Z"/></svg>
+      <svg id="sun" class="hidden" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 19a1 1 0 0 1 .993.883L13 20v1a1 1 0 0 1-1.993.117L11 21v-1a1 1 0 0 1 1-1m6.313-2.09l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7a1 1 0 0 1 1.218-1.567zm-11.306.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0M4 11a1 1 0 0 1 .117 1.993L4 13H3a1 1 0 0 1-.117-1.993L3 11zm17 0a1 1 0 0 1 .117 1.993L21 13h-1a1 1 0 0 1-.117-1.993L20 11zM6.213 4.81l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7A1 1 0 0 1 6.11 4.74zm12.894.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0M12 2a1 1 0 0 1 .993.883L13 3v1a1 1 0 0 1-1.993.117L11 4V3a1 1 0 0 1 1-1m0 5a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7"/></svg>
+      <a href="https://ssm-front.onrender.com" class="hidden md:btn-black uppercase">Get Started</a>
     </div>
   </nav>
 
   <div class="md:w-8/12 md:mx-auto space-y-16 md:space-y-28 p-5 py-16 md:py-24">
 
-    <div class="flex-between py-6 md:py-0">
-      <div class="grid gap-8">
-        <h1 class="text-4xl font-bold">
-          let us take care of <br>
-          your school
-        </h1>
-        <h5 class="font-semibold">
-          running support school requires a lot of effort, <br>
-          we are here to help you with that <br>
-          <a class="text-green-600">so you can enjoy peace of mind !</a>
-        </h5>
-        <a href="https://ssm-front.onrender.com" class="btn-black uppercase">Get Started</a>
+    <div class="grid md:grid-cols-2 py-10">
+      <div>
+        <div class="w-10/12 grid gap-8">
+          <h1 class="text-4xl font-bold">
+            let us take care of
+            your school
+          </h1>
+          <h5 class="font-semibold">
+            running support school requires a lot of effort, we are here to help you with that
+            <br><a class="text-green-600">so you can enjoy peace of mind !</a>
+          </h5>
+          <a href="https://ssm-front.onrender.com" class="btn-black uppercase">Get Started</a>
+        </div>
       </div>
-      <img class="hidden md:flex-center h-96"
-        src="https://previewed.app/static/15d63f3178584d3e70f29f1f4c56e507/f88f1/mockups_apple_mac.webp" alt="">
+      <img class="w-full hidden md:flex-center"
+        src="https://help.apple.com/assets/65C13B8310C97C4CA5052A31/65C13B8510C97C4CA5052A49/en_GB/2e24622a96c20c60aa9399f5a1e99acf.png"
+        alt="">
     </div>
 
     <h6 class="text-micro text-center border-[0.075rem] border-gray-300 dark:border-gray-700 p-4 rounded-xl">
-      Effortlessly <a class="font-bold">manage Students</a>, <a class="font-bold">handle Payments</a> and <a
-        class="font-bold">Courses</a>, <a class="font-bold">organize Lessons</a>, and <a class="font-bold">manage
-        Timetable</a> with our.
+      Effortlessly <a class="font-bold">manage Students</a>, <a class="font-bold">handle Payments</a> and
+      <a class="font-bold">Courses</a>, <a class="font-bold">organize Lessons</a>
+      , and <a class="font-bold">manage Timetable</a> with our.
       Our user-friendly interface allows you to easily organized and in control with features designed for simplicity,
-      you can also <a class="font-bold">Link Users</a> to your schools, ensuring everyone has access according to their
-      roles.
+      you can also <a class="font-bold">Link Users</a>
+      to your schools, ensuring everyone has access according to their roles.
       so you can focus on what matters most: providing a smooth educational experience for all.
     </h6>
 
     <div class="grid gap-8">
       <h1>
         <a class="flex items-center">
-          With Us <img src="/img/fire.png" class="w-8 h-8 ml-2">
+          With Us <img src="img/fire.png" class="w-8 h-8 ml-2">
         </a>
         You are not limited
       </h1>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
           <h3 class="flex items-center gap-4 font-medium">
-            <img src="/img/anytime.png" class="w-6 h-6">
+            <img src="img/anytime.png" class="w-6 h-6">
             At Anytime
           </h3>
           <h6>
@@ -187,7 +192,7 @@
         </div>
         <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
           <h3 class="flex items-center gap-4 font-medium">
-            <img src="/img/anywhere.png" class="w-7 h-7">
+            <img src="img/anywhere.png" class="w-7 h-7">
             From Anywhere
           </h3>
           <h6>
@@ -196,7 +201,7 @@
         </div>
         <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
           <h3 class="flex items-center gap-4 font-medium">
-            <img src="/img/anydevice.png" class="w-6 h-6">
+            <img src="img/anydevice.png" class="w-6 h-6">
             On Any Device
           </h3>
           <h6>
@@ -214,49 +219,71 @@
         Starting at 3000 DA a month, there's no better time to get started. Transform your school management experience
         today!
       </h5>
-      <h5 class="grid grid-cols-3 md:grid-cols-1 mt-8 text-center border-[0.075rem] border-gray-300 dark:border-gray-700 rounded-xl">
+      <h5
+        class="grid grid-cols-3 md:grid-cols-1 mt-8 text-center border-[0.075rem] border-gray-300 dark:border-gray-700 rounded-xl">
         <div class="grid md:grid-cols-6">
           <div class="p-4 font-medium h-14">Price</div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">Students</div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">Courses</div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">Timetable</div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">Finance</div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">Link users</div>
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+            Students</div>
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+            Courses</div>
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+            Timetable</div>
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+            Finance</div>
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+            Link users</div>
         </div>
-        <div class="grid md:grid-cols-6 border-x-[0.075rem] md:border-x-0 md:border-y-[0.075rem] border-gray-300 dark:border-gray-700">
+        <div
+          class="grid md:grid-cols-6 border-x-[0.075rem] md:border-x-0 md:border-y-[0.075rem] border-gray-300 dark:border-gray-700">
           <div class="p-4 font-medium">3000 DZ</div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="/img/true.png" class="w-4">
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+            <img src="img/true.png" class="w-4">
           </div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="/img/true.png" class="w-4">
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+            <img src="img/true.png" class="w-4">
           </div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="/img/true.png" class="w-4">
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+            <img src="img/true.png" class="w-4">
           </div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="/img/true.png" class="w-4">
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+            <img src="img/true.png" class="w-4">
           </div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="/img/false.png" class="w-4">
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+            <img src="img/false.png" class="w-4">
           </div>
         </div>
         <div class="grid md:grid-cols-6">
           <div class="p-4 font-medium">4500 DZ</div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="/img/true.png" class="w-4">
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+            <img src="img/true.png" class="w-4">
           </div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="/img/true.png" class="w-4">
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+            <img src="img/true.png" class="w-4">
           </div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="/img/true.png" class="w-4">
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+            <img src="img/true.png" class="w-4">
           </div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="/img/true.png" class="w-4">
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+            <img src="img/true.png" class="w-4">
           </div>
-          <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="/img/true.png" class="w-4">
+          <div
+            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+            <img src="img/true.png" class="w-4">
           </div>
         </div>
       </h5>
@@ -271,7 +298,7 @@
       <h2>Need to know more about us ?</h2>
       <a href="mailto:laziriamar100@gmail.com" class="btn-white mx-auto">
         Talk to Us
-        <img src="/img/contact.png" class="w-4 ml-4">
+        <img src="img/contact.png" class="w-4 ml-4">
       </a>
     </div> -->
 
@@ -285,7 +312,7 @@
           <h5>need more information ?</h5>
           <a href="mailto:laziriamar100@gmail.com" class="btn-white">
             Talk to Us
-            <img src="/img/contact.png" class="w-4 ml-4">
+            <img src="img/contact.png" class="w-4 ml-4">
           </a>
         </div>
       </div>
@@ -293,7 +320,8 @@
         <div class="flex-between gap-2 p-2 grid border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v">
           <svg class="w-4 h-4 mx-1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
             <path fill="currentColor"
-              d="M13.5 3C7.701 3 3 7.701 3 13.5S7.701 24 13.5 24c2.45 0 4.703-.839 6.489-2.244l6.878 6.878a1.25 1.25 0 1 0 1.768-1.768l-6.879-6.878A10.455 10.455 0 0 0 24 13.5C24 7.701 19.299 3 13.5 3Zm-8 10.5a8 8 0 1 1 16 0a8 8 0 0 1-16 0Z" />
+              d="M13.5 3C7.701 3 3 7.701 3 13.5S7.701 24 13.5 24c2.45 0 4.703-.839 6.489-2.244l6.878 6.878a1.25 1.25 0 1 0 1.768-1.768l-6.879-6.878A10.455 10.455 0 0 0 24 13.5C24 7.701 19.299 3 13.5 3Zm-8 10.5a8 8 0 1 1 16 0a8 8 0 0 1-16 0Z">
+            </path>
           </svg>
           <input id="searchFAQs" type="text" placeholder="search about your questions" class="w-full">
         </div>
@@ -304,11 +332,13 @@
               What additions does your software provide to my school?
               <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <path fill="currentColor"
-                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z" />
+                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z">
+                </path>
               </svg>
               <svg class="hidden w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <path fill="currentColor"
-                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z" />
+                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z">
+                </path>
               </svg>
             </h5>
             <hr class="hidden">
@@ -323,11 +353,13 @@
               What size school do you recommend using the software?
               <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <path fill="currentColor"
-                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z" />
+                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z">
+                </path>
               </svg>
               <svg class="hidden w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <path fill="currentColor"
-                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z" />
+                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z">
+                </path>
               </svg>
             </h5>
             <hr class="hidden">
@@ -342,11 +374,13 @@
               Is there a contract required to use your platform?
               <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <path fill="currentColor"
-                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z" />
+                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z">
+                </path>
               </svg>
               <svg class="hidden w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <path fill="currentColor"
-                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z" />
+                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z">
+                </path>
               </svg>
             </h5>
             <hr class="hidden">
@@ -360,11 +394,13 @@
               What payment methods do you accept for subscriptions?
               <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <path fill="currentColor"
-                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z" />
+                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z">
+                </path>
               </svg>
               <svg class="hidden w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <path fill="currentColor"
-                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z" />
+                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z">
+                </path>
               </svg>
             </h5>
             <hr class="hidden">
@@ -379,11 +415,13 @@
               What kind of support do you offer to customers?
               <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <path fill="currentColor"
-                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z" />
+                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z">
+                </path>
               </svg>
               <svg class="hidden w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <path fill="currentColor"
-                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z" />
+                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z">
+                </path>
               </svg>
             </h5>
             <hr class="hidden">
@@ -403,42 +441,65 @@
   </div>
 
   <script async>
-    if (localStorage.dark == "true") document.querySelector("html").classList.add("dark");
-    document.querySelector("html").lang = localStorage.language;
+    const $ = e => document.querySelector(e);
+    const eClass = e => (e?.classList ? e : $(e)).classList;
+    const hide = i => eClass(i).add("hidden");
+    const show = i => eClass(i).remove("hidden");
 
-    const $ = id => document.getElementById(id);
-    const FAQs = $("FAQs").children;
+    if (localStorage.dark == "true") {
+      eClass("html").add("dark");
+      hide("#moon");
+      show("#sun");
+    };
+    $("html").lang = localStorage.language;
 
     const result = query => {
+      const FAQs = $("#FAQs").children;
+
       for (const FAQ of FAQs) {
 
         const child = i => FAQ.children[i];
 
         FAQ.addEventListener("click", () => {
-          child(0).children[0].classList.toggle("hidden");
-          child(0).children[1].classList.toggle("hidden");
-          child(1).classList.toggle("hidden");
-          child(2).classList.toggle("hidden");
+          eClass(child(0).children[0]).toggel("hidden");
+          eClass(child(0).children[1]).toggel("hidden");
+          eClass(child(1)).toggel("hidden");
+          eClass(child(2)).toggel("hidden");
         });
 
         if (`${child(0)?.innerText.toLowerCase()} ${child(2)?.innerText.toLowerCase()}`.includes(query.toLowerCase())) {
-          FAQ.classList.remove("hidden");
+          show(FAQ);
         } else {
-          FAQ.classList.add("hidden");
+          hide(FAQ);
         }
 
         const emptyFAQs = Array.from(FAQs).every(({ classList }) => classList.contains("hidden"));
         if (emptyFAQs) {
-          $("emptyFAQs").classList.remove("hidden");
+          show("#emptyFAQs");
         } else {
-          $("emptyFAQs").classList.add("hidden");
+          hide("#emptyFAQs");
         }
 
       }
     }
-
+    
     result("");
-    $("searchFAQs").addEventListener("input", ({ srcElement }) => result(srcElement.value));
+
+    $("#searchFAQs").addEventListener("input", ({ srcElement }) => result(srcElement.value));
+
+    $("#moon").addEventListener("click", () => {
+      eClass("html").add("dark");
+      localStorage.dark = true;
+      hide("#moon");
+      show("#sun");
+    });
+
+    $("#sun").addEventListener("click", () => {
+      eClass("html").remove("dark");
+      localStorage.dark = false;
+      show("#moon");
+      hide("#sun");
+    });
   </script>
 </body>
 
