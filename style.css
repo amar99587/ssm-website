@@ -10,12 +10,12 @@
   -moz-user-select:none;
   -ms-user-select:none;
   -webkit-tap-highlight-color:#ffffff00;
-  font-family:"Readex Pro", sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
   overflow-x: hidden;
+  font-family:"Readex Pro", sans-serif;
 }
 
 .logo-font-family {
