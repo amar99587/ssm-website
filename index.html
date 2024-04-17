@@ -1,506 +1,437 @@
 <!DOCTYPE html>
-<html class="" lang="fr">
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laziri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.js"></script>
+    <style type="text/tailwindcss">
+      @tailwind base;
+      @tailwind utilities;
+      @tailwind components;
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laziri</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="tailwind.js"></script>
-  <style type="text/tailwindcss">
-    @tailwind base;
-    @tailwind utilities;
-    @tailwind components;
+      @layer base {
+        * {
+          @apply first-letter:uppercase; 
+        }
 
-    @layer base {
-      * {
-        @apply first-letter:uppercase; 
+        body {
+          @apply text-[#1d1d1f] dark:text-white bg-[#f5f5f7] dark:bg-gray-900
+        }
+
+        ::-webkit-scrollbar {
+          @apply hidden w-[6px];
+        }
+
+        .scrollbar::-webkit-scrollbar {
+          @apply block absolute;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          @apply rounded-v ring-2 ring-white smooth;
+        }
+        
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        input,
+        textarea {
+          @apply bg-transparent;
+        }
+
+        h1 {
+          @apply text-3xl font-semibold;
+        }
+
+        h2 {
+          @apply text-xl font-semibold;
+        }
+
+        h3 {
+          @apply text-lg;
+        }
+
+        h4 {
+          @apply text-base;
+        }
+
+        h5 {
+          @apply text-sm;
+        }
+
+        h6 {
+          @apply text-xs;
+        }
+
+        hr {
+          @apply dark:border-gray-600;
+        }
+
       }
 
-      body {
-        @apply text-[#1d1d1f] dark:text-white bg-[#f5f5f7] dark:bg-gray-900
+      @layer utilities {
+
+        .flex-between { 
+          @apply flex justify-between items-center; 
+        }
+
+        .flex-center { 
+          @apply flex justify-center items-center; 
+        }
+
+        .smooth {
+          @apply transition duration-500 ease-in-out;
+        }
+
+        .rounded-v {
+          @apply rounded-lg
+        }
+
+        .link {
+          @apply decoration-solid underline cursor-pointer;
+        }
+
+        .btn {
+          @apply max-w-fit min-w-[36px] min-h-[24px] flex-between px-4 py-2 text-xs tracking-wider rounded-v cursor-pointer smooth;
+        }
+
+        .btn-black {
+          @apply btn font-medium bg-black dark:bg-white text-white dark:text-gray-700 hover:bg-gray-800;
+        }
+
+        .btn-white {
+          @apply btn font-bold border-[0.1rem] border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700;
+        }
+        
+        .text-micro {
+          @apply text-[.6rem] leading-3;
+        }
+
+        .mini-text {
+          @apply text-gray-600 dark:text-gray-400;
+        }
+
       }
 
-      ::-webkit-scrollbar {
-        @apply hidden w-[6px];
-      }
+      @layer components {}
+    </style>
+    <meta name="description" content="Laziri is a tool for batter manage small and support schools">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
 
-      .scrollbar::-webkit-scrollbar {
-        @apply block absolute;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        @apply rounded-v ring-2 ring-white smooth;
-      }
-      
-      input[type="number"]::-webkit-inner-spin-button,
-      input[type="number"]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-
-      input,
-      textarea {
-        @apply bg-transparent;
-      }
-
-      h1 {
-        @apply text-3xl font-semibold;
-      }
-
-      h2 {
-        @apply text-xl font-semibold;
-      }
-
-      h3 {
-        @apply text-lg;
-      }
-
-      h4 {
-        @apply text-base;
-      }
-
-      h5 {
-        @apply text-sm;
-      }
-
-      h6 {
-        @apply text-xs;
-      }
-
-      hr {
-        @apply dark:border-gray-600;
-      }
-
-    }
-
-    @layer utilities {
-
-      .flex-between { 
-        @apply flex justify-between items-center; 
-      }
-
-      .flex-center { 
-        @apply flex justify-center items-center; 
-      }
-
-      .smooth {
-        @apply transition duration-500 ease-in-out;
-      }
-
-      .rounded-v {
-        @apply rounded-lg
-      }
-
-      .link {
-        @apply decoration-solid underline cursor-pointer;
-      }
-
-      .btn {
-        @apply max-w-fit min-w-[36px] min-h-[24px] flex-between px-4 py-2 text-xs tracking-wider rounded-v cursor-pointer smooth;
-      }
-
-      .btn-black {
-        @apply btn font-medium bg-black dark:bg-white text-white dark:text-gray-700 hover:bg-gray-800;
-      }
-
-      .btn-white {
-        @apply btn font-bold border-[0.1rem] border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700;
-      }
-      
-      .text-micro {
-        @apply text-[.6rem] leading-3;
-      }
-
-      .mini-text {
-        @apply text-gray-600 dark:text-gray-400;
-      }
-
-    }
-
-    @layer components {}
-  </style>
-  <meta name="description" content="Laziri is a tool for batter manage small and support schools">
-  <link rel="icon" href="img/logo.png">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-  <nav
-    class="sticky top-0 z-50 w-full bg-[#f5f5f7] bg-opacity-50 backdrop-blur-lg dark:bg-slate-900/75 flex items-center gap-36 p-4">
-    <h3 class="font-medium w-full logo-font-family tracking-widest" translate="no">LAZIRI</h3>
-    <div class="min-w-fit hidden md:flex items-center gap-16">
-      <a class="text-sm cursor-pointer">how it works ?</a>
-      <a class="text-sm cursor-pointer">need help ?</a>
-      <a class="text-sm cursor-pointer">contact us</a>
-    </div>
-    <div class="min-w-fit flex items-center gap-8">
-      <svg id="moon" class="cursure-pointer" xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 256 256"><path fill="currentColor" d="M235.54 150.21a104.84 104.84 0 0 1-37 52.91A104 104 0 0 1 32 120a103.09 103.09 0 0 1 20.88-62.52a104.84 104.84 0 0 1 52.91-37a8 8 0 0 1 10 10a88.08 88.08 0 0 0 109.8 109.8a8 8 0 0 1 10 10Z"/></svg>
-      <svg id="sun" class="hidden" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 19a1 1 0 0 1 .993.883L13 20v1a1 1 0 0 1-1.993.117L11 21v-1a1 1 0 0 1 1-1m6.313-2.09l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7a1 1 0 0 1 1.218-1.567zm-11.306.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0M4 11a1 1 0 0 1 .117 1.993L4 13H3a1 1 0 0 1-.117-1.993L3 11zm17 0a1 1 0 0 1 .117 1.993L21 13h-1a1 1 0 0 1-.117-1.993L20 11zM6.213 4.81l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7A1 1 0 0 1 6.11 4.74zm12.894.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0M12 2a1 1 0 0 1 .993.883L13 3v1a1 1 0 0 1-1.993.117L11 4V3a1 1 0 0 1 1-1m0 5a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7"/></svg>
-      <a href="https://ssm-front.onrender.com" class="hidden md:btn-black uppercase">Get Started</a>
-    </div>
-  </nav>
-
-  <div class="md:w-8/12 md:mx-auto space-y-16 md:space-y-28 p-5 py-16 md:py-24">
-
-    <div class="grid md:grid-cols-2 py-10">
-      <div>
-        <div class="w-10/12 grid gap-8">
-          <h1 class="text-4xl font-bold">
-            let us take care of
-            your school
-          </h1>
-          <h5 class="font-semibold">
-            running support school requires a lot of effort, we are here to help you with that
-            <br><a class="text-green-600">so you can enjoy peace of mind !</a>
-          </h5>
-          <a href="https://ssm-front.onrender.com" class="btn-black uppercase">Get Started</a>
-        </div>
+    <nav class="sticky top-0 z-50 w-full bg-[#f5f5f7] bg-opacity-50 backdrop-blur-lg dark:bg-slate-900/75 flex items-center gap-36 p-4">
+      <h3 class="font-medium w-full logo-font-family tracking-widest" translate="no">LAZIRI</h3>
+      <div class="flex items-center gap-4 md:gap-8">
+        <a href="tel:+213698467691" class="cursor-pointer">+213698467691</a>
+        <svg id="moon" class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 256 256"><path fill="currentColor" d="M235.54 150.21a104.84 104.84 0 0 1-37 52.91A104 104 0 0 1 32 120a103.09 103.09 0 0 1 20.88-62.52a104.84 104.84 0 0 1 52.91-37a8 8 0 0 1 10 10a88.08 88.08 0 0 0 109.8 109.8a8 8 0 0 1 10 10Z"/></svg>
+        <svg id="sun" class="hidden cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 19a1 1 0 0 1 .993.883L13 20v1a1 1 0 0 1-1.993.117L11 21v-1a1 1 0 0 1 1-1m6.313-2.09l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7a1 1 0 0 1 1.218-1.567zm-11.306.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0M4 11a1 1 0 0 1 .117 1.993L4 13H3a1 1 0 0 1-.117-1.993L3 11zm17 0a1 1 0 0 1 .117 1.993L21 13h-1a1 1 0 0 1-.117-1.993L20 11zM6.213 4.81l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7A1 1 0 0 1 6.11 4.74zm12.894.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0M12 2a1 1 0 0 1 .993.883L13 3v1a1 1 0 0 1-1.993.117L11 4V3a1 1 0 0 1 1-1m0 5a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7"/></svg>        
       </div>
-      <img class="w-full hidden md:flex-center"
-        src="img/devices.png"
-        alt="">
-    </div>
+    </nav>
 
-    <h6 class="text-micro text-center border-[0.075rem] border-gray-300 dark:border-gray-700 p-4 rounded-xl">
-      Effortlessly <a class="font-bold">manage Students</a>, <a class="font-bold">handle Payments</a> and
-      <a class="font-bold">Courses</a>, <a class="font-bold">organize Lessons</a>
-      , and <a class="font-bold">manage Timetable</a> with our.
-      Our user-friendly interface allows you to easily organized and in control with features designed for simplicity,
-      you can also <a class="font-bold">Link Users</a>
-      to your schools, ensuring everyone has access according to their roles.
-      so you can focus on what matters most: providing a smooth educational experience for all.
-    </h6>
+    <div class="md:w-8/12 md:mx-auto space-y-16 md:space-y-28 p-5 py-16 md:py-24">
 
-    <div class="grid gap-8">
-      <h1>
-        <a class="flex items-center">
-          With Us <img src="img/fire.png" class="w-8 h-8 ml-2">
-        </a>
-        You are not limited
-      </h1>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
-          <h3 class="flex items-center gap-4 font-medium">
-            <img src="img/anytime.png" class="w-6 h-6">
-            At Anytime
-          </h3>
-          <h6>
-            Because of our servers with zero downtime mean that you can access to your school at any time
-          </h6>
+      <div class="grid md:grid-cols-2 py-10">
+        <div>
+          <div class="w-10/12 grid gap-8">
+            <h1 class="text-4xl font-bold">
+              let us take care of
+              your school
+            </h1>
+            <h5 class="font-semibold">
+              running support school requires a lot of effort, we are here to help you with that
+              <br><a class="text-green-600">so you can enjoy peace of mind !</a>
+            </h5>
+            <a href="https://ssm-front.onrender.com" class="btn-black uppercase">Get Started</a>
+          </div>
         </div>
-        <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
-          <h3 class="flex items-center gap-4 font-medium">
-            <img src="img/anywhere.png" class="w-7 h-7">
-            From Anywhere
-          </h3>
-          <h6>
-            Because you don’t need a local server you can access to your school from anywhere
-          </h6>
-        </div>
-        <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
-          <h3 class="flex items-center gap-4 font-medium">
-            <img src="img/anydevice.png" class="w-6 h-6">
-            On Any Device
-          </h3>
-          <h6>
-            you just need a browser, internet and that’s it, you can access to your school on any device
-          </h6>
-        </div>
+        <img class="w-full hidden md:flex-center"
+          src="img/devices.png"
+          alt="">
       </div>
-    </div>
 
-    <div class="grid gap-4">
-      <h1>So what do i need to start ?</h1>
-      <h5>
-        Just grab your device, open a browser, and connect to the internet – that's all it takes to use our effortless
-        intuitive software. <br>
-        Starting at 3000 DA a month, there's no better time to get started. Transform your school management experience
-        today!
-      </h5>
-      <h5
-        class="grid grid-cols-3 md:grid-cols-1 mt-8 text-center border-[0.075rem] border-gray-300 dark:border-gray-700 rounded-xl">
-        <div class="grid md:grid-cols-6">
-          <div class="p-4 font-medium h-14">Price</div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
-            Students</div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
-            Courses</div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
-            Timetable</div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
-            Finance</div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
-            Link users</div>
-        </div>
-        <div
-          class="grid md:grid-cols-6 border-x-[0.075rem] md:border-x-0 md:border-y-[0.075rem] border-gray-300 dark:border-gray-700">
-          <div class="p-4 font-medium">3000 DZ</div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="img/true.png" class="w-4">
-          </div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="img/true.png" class="w-4">
-          </div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="img/true.png" class="w-4">
-          </div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="img/true.png" class="w-4">
-          </div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="img/false.png" class="w-4">
-          </div>
-        </div>
-        <div class="grid md:grid-cols-6">
-          <div class="p-4 font-medium">4500 DZ</div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="img/true.png" class="w-4">
-          </div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="img/true.png" class="w-4">
-          </div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="img/true.png" class="w-4">
-          </div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="img/true.png" class="w-4">
-          </div>
-          <div
-            class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
-            <img src="img/true.png" class="w-4">
-          </div>
-        </div>
-      </h5>
-      <h6 class="text-center text-micro">
-        in the first offer grants access to all app features except for linking new users to your school at 3000
-        DA/month. <br>
-        in the second offer grants full access to app features at 4500 DA/month.
+      <h6 class="text-micro text-center border-[0.075rem] border-gray-300 dark:border-gray-700 p-4 rounded-xl">
+        Effortlessly <a class="font-bold">manage Students</a>, <a class="font-bold">handle Payments</a> and
+        <a class="font-bold">Courses</a>, <a class="font-bold">organize Lessons</a>
+        , and <a class="font-bold">manage Timetable</a> with our.
+        Our user-friendly interface allows you to easily organized and in control with features designed for simplicity,
+        you can also <a class="font-bold">Link Users</a>
+        to your schools, ensuring everyone has access according to their roles.
+        so you can focus on what matters most: providing a smooth educational experience for all.
       </h6>
-    </div>
 
-    <!-- <div class="text-center space-y-8">
-      <h2>Need to know more about us ?</h2>
-      <a href="mailto:laziriamar100@gmail.com" class="btn-white mx-auto">
-        Talk to Us
-        <img src="img/contact.png" class="w-4 ml-4">
-      </a>
-    </div> -->
-
-    <div class="md:flex justify-between items-start">
-      <div class="w-full space-y-16">
-        <div class="space-y-2">
-          <h6 class="font-bold text-gray-400">FAQs</h6>
-          <h1>Take A Look At The Most <br> Frequently Asked Questions</h1>
-        </div>
-        <div class="space-y-2">
-          <h5>need more information ?</h5>
-          <a href="mailto:laziriamar100@gmail.com" class="btn-white">
-            Talk to Us
-            <img src="img/contact.png" class="w-4 ml-4">
+      <div class="grid gap-8">
+        <h1>
+          <a class="flex items-center">
+            With Us <img src="img/fire.png" class="w-8 h-8 ml-2">
           </a>
+          You are not limited
+        </h1>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
+            <h3 class="flex items-center gap-4 font-medium">
+              <img src="img/anytime.png" class="w-6 h-6">
+              At Anytime
+            </h3>
+            <h6>
+              Because of our servers with zero downtime mean that you can access to your school at any time
+            </h6>
+          </div>
+          <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
+            <h3 class="flex items-center gap-4 font-medium">
+              <img src="img/anywhere.png" class="w-7 h-7">
+              From Anywhere
+            </h3>
+            <h6>
+              Because you don’t need a local server you can access to your school from anywhere
+            </h6>
+          </div>
+          <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
+            <h3 class="flex items-center gap-4 font-medium">
+              <img src="img/anydevice.png" class="w-6 h-6">
+              On Any Device
+            </h3>
+            <h6>
+              you just need a browser, internet and that’s it, you can access to your school on any device
+            </h6>
+          </div>
         </div>
       </div>
-      <h5 class="w-full grid gap-4 mt-8">
-        <div class="flex-between gap-2 p-2 grid border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v">
-          <svg class="w-4 h-4 mx-1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-            <path fill="currentColor"
-              d="M13.5 3C7.701 3 3 7.701 3 13.5S7.701 24 13.5 24c2.45 0 4.703-.839 6.489-2.244l6.878 6.878a1.25 1.25 0 1 0 1.768-1.768l-6.879-6.878A10.455 10.455 0 0 0 24 13.5C24 7.701 19.299 3 13.5 3Zm-8 10.5a8 8 0 1 1 16 0a8 8 0 0 1-16 0Z">
-            </path>
-          </svg>
-          <input id="searchFAQs" type="text" placeholder="search about your questions" class="w-full">
+
+      <div class="grid gap-4">
+        <h1>So what do i need to start ?</h1>
+        <h5>
+          Just grab your device, open a browser, and connect to the internet – that's all it takes to use our effortless
+          intuitive software. <br>
+          Starting at 3000 DA a month, there's no better time to get started. Transform your school management experience
+          today!
+        </h5>
+        <h5
+          class="grid grid-cols-3 md:grid-cols-1 mt-8 text-center border-[0.075rem] border-gray-300 dark:border-gray-700 rounded-xl">
+          <div class="grid md:grid-cols-6">
+            <div class="p-4 font-medium h-14">Price</div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+              Students</div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+              Courses</div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+              Timetable</div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+              Finance</div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+              Link users</div>
+          </div>
+          <div
+            class="grid md:grid-cols-6 border-x-[0.075rem] md:border-x-0 md:border-y-[0.075rem] border-gray-300 dark:border-gray-700">
+            <div class="p-4 font-medium">3000 DZ</div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4">
+            </div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4">
+            </div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4">
+            </div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4">
+            </div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/false.png" class="w-4">
+            </div>
+          </div>
+          <div class="grid md:grid-cols-6">
+            <div class="p-4 font-medium">4500 DZ</div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4">
+            </div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4">
+            </div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4">
+            </div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4">
+            </div>
+            <div
+              class="p-4 border-t-[0.075rem] md:border-t-0 md:border-l-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4">
+            </div>
+          </div>
+        </h5>
+        <h6 class="text-center text-micro">
+          Full features access: 4500 DA/month. User linking excluded: 3000 DA/month, 
+          you have to contact us before and after the payment.
+          <!-- in the first offer grants access to all app features except for linking new users to your school at 3000 DA/month,
+          in the second offer grants full access to app features at 4500 DA/month. -->
+        </h6>
+      </div>
+
+      <!-- <div class="text-center space-y-8">
+        <h2>Need to know more about us ?</h2>
+        <a href="mailto:laziriamar100@gmail.com" class="btn-white mx-auto">
+          Talk to Us
+          <img src="img/contact.png" class="w-4 ml-4">
+        </a>
+      </div> -->
+
+      <div>
+        <div id="FAQsLeft" class="w-full space-y-16">
+          <div class="space-y-2">
+            <h6 class="font-bold text-gray-400">FAQs</h6>
+            <h1>Take A Look At The Most <br> Frequently Asked Questions</h1>
+          </div>
+          <div class="grid gap-2">
+            <h5>need more information ?</h5>            
+            <a href="tel:+213698467691" class="btn-white mt-4">
+              contact us
+              <img src="img/contact.png" class="w-4 ml-4">
+            </a>
+            <!-- <h6 class="mini-text">we only accept direct call or whatsapp</h6> -->
+          </div>
         </div>
-        <ul id="FAQs" class="overflow-y-auto md:max-h-[135px] space-y-4">
-          <li
-            class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
-            <h5 class="flex-between">
-              What additions does your software provide to my school?
-              <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z">
-                </path>
-              </svg>
-              <svg class="hidden w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z">
-                </path>
-              </svg>
-            </h5>
-            <hr class="hidden">
-            <p class="hidden mini-text smooth">
-              Our software streamlines tasks, enhances communication, manages data, improves engagement,
-              and offers customization for efficient school management.
-            </p>
-          </li>
-          <li
-            class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
-            <h5 class="flex-between">
-              What size school do you recommend using the software?
-              <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z">
-                </path>
-              </svg>
-              <svg class="hidden w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z">
-                </path>
-              </svg>
-            </h5>
-            <hr class="hidden">
-            <p class="hidden mini-text smooth">
-              Our software is ideal for small schools seeking efficient administrative management,
-              effective communication, and streamlined operations.
-            </p>
-          </li>
-          <li
-            class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
-            <h5 class="flex-between">
-              Is there a contract required to use your platform?
-              <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z">
-                </path>
-              </svg>
-              <svg class="hidden w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z">
-                </path>
-              </svg>
-            </h5>
-            <hr class="hidden">
-            <p class="hidden mini-text smooth">
-              No, our platform offers flexible subscription plans without requiring long-term contracts.
-            </p>
-          </li>
-          <li
-            class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
-            <h5 class="flex-between">
-              What payment methods do you accept for subscriptions?
-              <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z">
-                </path>
-              </svg>
-              <svg class="hidden w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z">
-                </path>
-              </svg>
-            </h5>
-            <hr class="hidden">
-            <p class="hidden mini-text smooth">
-              We accept cash, CCP, and Baridi Mob for subscriptions.
-              Payment is processed manually; please contact us before and after payment.
-            </p>
-          </li>
-          <li
-            class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
-            <h5 class="flex-between">
-              What kind of support do you offer to customers?
-              <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M6.102 8c-1.074 0-1.648 1.265-.94 2.073l5.521 6.31a1.75 1.75 0 0 0 2.634 0l5.522-6.31c.707-.808.133-2.073-.94-2.073H6.101Z">
-                </path>
-              </svg>
-              <svg class="hidden w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M6.102 16.98c-1.074 0-1.648-1.264-.94-2.073l5.521-6.31a1.75 1.75 0 0 1 2.634 0l5.522 6.31c.707.809.133 2.073-.94 2.073H6.101Z">
-                </path>
-              </svg>
-            </h5>
-            <hr class="hidden">
-            <p class="hidden mini-text smooth">
-              We offer customer support via email and messenger.
-              Direct call support will be available in the future incha-Allah.
-            </p>
-          </li>
-        </ul>
-        <div id="emptyFAQs" class="hidden text-micro text-center">
-          can't find your question?
-          <a href="mailto:laziriamar100@gmail.com" class="link">contact us</a>
-        </div>
-      </h5>
+        <h5 class="grid gap-4 mt-8">
+          <div class="flex-between gap-2 p-2 grid border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v">
+            <svg class="w-4 h-4 mx-1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill="currentColor"
+                d="M13.5 3C7.701 3 3 7.701 3 13.5S7.701 24 13.5 24c2.45 0 4.703-.839 6.489-2.244l6.878 6.878a1.25 1.25 0 1 0 1.768-1.768l-6.879-6.878A10.455 10.455 0 0 0 24 13.5C24 7.701 19.299 3 13.5 3Zm-8 10.5a8 8 0 1 1 16 0a8 8 0 0 1-16 0Z">
+              </path>
+            </svg>
+            <input id="searchFAQs" type="text" placeholder="search about your questions" class="w-full">
+          </div>
+          <ul id="FAQs" class="overflow-y-auto space-y-4">
+            <li class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
+              <h5 class="flex-between">
+                What additions does your software provide to my school?
+              </h5>
+              <hr>
+              <p class="mini-text smooth">
+                Our software streamlines tasks, enhances communication, manages data, improves engagement,
+                and offers customization for efficient school management.
+              </p>
+            </li>
+            <li class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
+              <h5 class="flex-between">
+                What size school do you recommend using the software?
+              </h5>
+              <hr>
+              <p class="mini-text smooth">
+                Our software is ideal for small schools seeking efficient administrative management,
+                effective communication, and streamlined operations.
+              </p>
+            </li>
+            <li class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
+              <h5 class="flex-between">
+                Is there a contract required to use your platform?
+              </h5>
+              <hr>
+              <p class="mini-text smooth">
+                No, our platform offers flexible subscription plans without requiring long-term contracts.
+              </p>
+            </li>
+            <li class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
+              <h5 class="flex-between">
+                What payment methods do you accept for subscriptions?
+              </h5>
+              <hr>
+              <p class="mini-text smooth">
+                We accept cash, CCP, and Baridi Mob for subscriptions.
+                Payment is processed manually; please contact us before and after payment.
+              </p>
+            </li>
+            <li class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
+              <h5 class="flex-between">
+                What kind of support do you offer to customers?
+              </h5>
+              <hr>
+              <p class="mini-text smooth">
+                We offer customer support via email and messenger.
+                Direct call support will be available in the future incha-Allah.
+              </p>
+            </li>
+          </ul>
+          <div id="emptyFAQs" class="hidden text-micro text-center">
+            can't find your question?
+            <a href="tel:+213698467691" class="cursor-pointer">contact us : +213698467691</a>
+          </div>
+        </h5>
+      </div>
+
     </div>
 
-  </div>
+    <script async>
+      const $ = e => document.querySelector(e);
+      const eClass = e => (e?.classList ? e : $(e)).classList;
+      const hide = i => eClass(i).add("hidden");
+      const show = i => eClass(i).remove("hidden");
 
-  <script async>
-    const $ = e => document.querySelector(e);
-    const eClass = e => (e?.classList ? e : $(e)).classList;
-    const hide = i => eClass(i).add("hidden");
-    const show = i => eClass(i).remove("hidden");
+      if (localStorage.dark == "true") {
+        eClass("html").add("dark");
+        hide("#moon");
+        show("#sun");
+      };
+      // $("html").lang = localStorage.language;
 
-    if (localStorage.dark == "true") {
-      eClass("html").add("dark");
-      hide("#moon");
-      show("#sun");
-    };
-    $("html").lang = localStorage.language;
+      const result = query => {
+        $("#FAQs").style.height = `${$("#FAQsLeft").clientHeight - 87.2} px`;
+        const FAQs = $("#FAQs").children;
 
-    const result = query => {
-      const FAQs = $("#FAQs").children;
+        for (const FAQ of FAQs) {
 
-      for (const FAQ of FAQs) {
+          const child = i => FAQ.children[i];
 
-        const child = i => FAQ.children[i];
+          if (`${child(0)?.innerText.toLowerCase()} ${child(2)?.innerText.toLowerCase()}`.includes(query.toLowerCase())) {
+            show(FAQ);
+          } else {
+            hide(FAQ);
+          }
 
-        FAQ.addEventListener("click", () => {
-          eClass(child(0).children[0]).toggel("hidden");
-          eClass(child(0).children[1]).toggel("hidden");
-          eClass(child(1)).toggel("hidden");
-          eClass(child(2)).toggel("hidden");
-        });
+          const emptyFAQs = Array.from(FAQs).every(({ classList }) => classList.contains("hidden"));
+          if (emptyFAQs) {
+            show("#emptyFAQs");
+          } else {
+            hide("#emptyFAQs");
+          }
 
-        if (`${child(0)?.innerText.toLowerCase()} ${child(2)?.innerText.toLowerCase()}`.includes(query.toLowerCase())) {
-          show(FAQ);
-        } else {
-          hide(FAQ);
         }
-
-        const emptyFAQs = Array.from(FAQs).every(({ classList }) => classList.contains("hidden"));
-        if (emptyFAQs) {
-          show("#emptyFAQs");
-        } else {
-          hide("#emptyFAQs");
-        }
-
       }
-    }
-    
-    result("");
 
-    $("#searchFAQs").addEventListener("input", ({ srcElement }) => result(srcElement.value));
+      $("#searchFAQs").addEventListener("input", ({ srcElement }) => result(srcElement.value));
 
-    $("#moon").addEventListener("click", () => {
-      eClass("html").add("dark");
-      localStorage.dark = true;
-      hide("#moon");
-      show("#sun");
-    });
+      $("#moon").addEventListener("click", () => {
+        eClass("html").add("dark");
+        localStorage.dark = true;
+        hide("#moon");
+        show("#sun");
+      });
 
-    $("#sun").addEventListener("click", () => {
-      eClass("html").remove("dark");
-      localStorage.dark = false;
-      show("#moon");
-      hide("#sun");
-    });
-  </script>
-</body>
+      $("#sun").addEventListener("click", () => {
+        eClass("html").remove("dark");
+        localStorage.dark = false;
+        show("#moon");
+        hide("#sun");
+      });
+    </script>
 
+  </body>
 </html>
