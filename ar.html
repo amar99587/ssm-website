@@ -1,0 +1,476 @@
+<html lang="ar" dir="rtl" class="dark translated-rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title translate="no">Laziri</title>
+    <meta
+      name="description"
+      translate="no"
+      content="Laziri هي أداة لتحسين إدارة المدارس الصغيرة وتقديم الدعم."
+    />
+    <link rel="icon" href="img/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.js"></script>
+    <style type="text/tailwindcss">
+      @tailwind base;
+      @tailwind utilities;
+      @tailwind components;
+
+      @layer base {
+        * {
+          @apply first-letter:uppercase;
+        }
+
+        body {
+          @apply text-[#1d1d1f] dark:text-white bg-[#f5f5f7] dark:bg-gray-900;
+        }
+
+        ::-webkit-scrollbar {
+          @apply hidden w-[6px];
+        }
+
+        .scrollbar::-webkit-scrollbar {
+          @apply block absolute;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          @apply rounded-v ring-2 ring-white smooth;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        input,
+        textarea {
+          @apply bg-transparent;
+        }
+
+        h1 {
+          @apply text-3xl font-semibold;
+        }
+
+        h2 {
+          @apply text-xl font-semibold;
+        }
+
+        h3 {
+          @apply text-lg;
+        }
+
+        h4 {
+          @apply text-base;
+        }
+
+        h5 {
+          @apply text-sm;
+        }
+
+        h6 {
+          @apply text-xs;
+        }
+
+        hr {
+          @apply dark:border-gray-600;
+        }
+      }
+
+      @layer utilities {
+        .flex-between {
+          @apply flex justify-between items-center;
+        }
+
+        .flex-center {
+          @apply flex justify-center items-center;
+        }
+
+        .smooth {
+          @apply transition duration-500 ease-in-out;
+        }
+
+        .rounded-v {
+          @apply rounded-lg;
+        }
+
+        .link {
+          @apply decoration-solid underline cursor-pointer;
+        }
+
+        .btn {
+          @apply max-w-fit min-w-[36px] min-h-[24px] flex-between px-4 py-2 text-xs tracking-wider rounded-v cursor-pointer smooth;
+        }
+
+        .btn-black {
+          @apply btn font-medium bg-black dark:bg-white text-white dark:text-gray-700 hover:bg-gray-800;
+        }
+
+        .btn-white {
+          @apply btn font-bold border-[0.1rem] border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700;
+        }
+
+        .text-micro {
+          @apply text-[.6rem] leading-3;
+        }
+
+        .mini-text {
+          @apply text-gray-600 dark:text-gray-400;
+        }
+      }
+
+      @layer components {
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav dir="ltr" class="w-full flex-between gap-36 p-4 sticky top-0 z-50 bg-[#f5f5f7] bg-opacity-50 backdrop-blur-lg dark:bg-slate-900/75">
+      <h3 class="font-medium logo-font-family tracking-widest px-0 md:px-4" translate="no">
+        LAZIRI
+      </h3>
+      <div class="flex justify-end items-center px-0 md:px-4 gap-6 md:gap-8">
+        <a href="tel:+213698467691" class="hidden md:block cursor-pointer">
+          +213 6 98 46 76 91
+        </a>
+        <svg
+          id="moon"
+          class="cursor-pointer hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.25em"
+          height="1.25em"
+          viewBox="0 0 256 256"
+        >
+          <path
+            fill="currentColor"
+            d="M235.54 150.21a104.84 104.84 0 0 1-37 52.91A104 104 0 0 1 32 120a103.09 103.09 0 0 1 20.88-62.52a104.84 104.84 0 0 1 52.91-37a8 8 0 0 1 10 10a88.08 88.08 0 0 0 109.8 109.8a8 8 0 0 1 10 10Z"></path>
+        </svg>
+        <svg
+          id="sun"
+          class="cursor-pointer"
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.5em"
+          height="1.5em"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M12 19a1 1 0 0 1 .993.883L13 20v1a1 1 0 0 1-1.993.117L11 21v-1a1 1 0 0 1 1-1m6.313-2.09l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7a1 1 0 0 1 1.218-1.567zm-11.306.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0M4 11a1 1 0 0 1 .117 1.993L4 13H3a1 1 0 0 1-.117-1.993L3 11zm17 0a1 1 0 0 1 .117 1.993L21 13h-1a1 1 0 0 1-.117-1.993L20 11zM6.213 4.81l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7A1 1 0 0 1 6.11 4.74zm12.894.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0M12 2a1 1 0 0 1 .993.883L13 3v1a1 1 0 0 1-1.993.117L11 4V3a1 1 0 0 1 1-1m0 5a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7"></path>
+        </svg>
+        <a href="tel:+213698467691" class="md:hidden cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1.25em"
+            height="1.25em"
+            viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="m7.772 2.439l1.077-.344c1.008-.322 2.086.199 2.518 1.217l.86 2.028c.375.883.167 1.922-.514 2.568L9.82 9.706c.117 1.076.478 2.135 1.084 3.177a8.68 8.68 0 0 0 2.271 2.595l2.276-.76c.862-.287 1.801.044 2.33.821l1.232 1.81c.616.904.505 2.15-.258 2.916l-.818.821c-.814.817-1.976 1.114-3.052.778c-2.539-.792-4.873-3.143-7.003-7.053c-2.133-3.916-2.885-7.24-2.258-9.968c.264-1.148 1.082-2.063 2.15-2.404Z"></path>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+    <div
+      class="sm:10/12 md:w-8/12 mx-auto space-y-16 md:space-y-28 p-5 py-16 md:py-24"
+    >
+      <div class="grid md:grid-cols-2 py-10">
+        <div>
+          <div class="w-10/12 grid gap-8">
+            <h1 class="text-4xl font-bold">دعنا نعتني بمدرستك</h1>
+            <h5 class="font-semibold">
+              يتطلب تسيير مدارس الدعم الكثير من الجهد، ونحن هنا لمساعدتك في ذلك
+              <br/>
+              <a class="text-green-600">
+                حتى تتمكن من الاستمتاع براحة البال!
+              </a>
+            </h5>
+            <a href="https://ssm-front.onrender.com" class="btn-black uppercase">
+              يبدأ
+            </a>
+          </div>
+        </div>
+        <img
+          class="w-full hidden md:flex-center"
+          src="img/devices.png"
+          alt=""
+        />
+      </div>
+
+      <h6 class="text-micro text-center border-[0.075rem] border-gray-300 dark:border-gray-700 p-4 rounded-xl">
+        <a class="font-bold"> إدارة الطلاب </a>
+        <a class="font-bold"> والمدفوعات </a>
+        <a class="font-bold"> والدورات </a>
+        بسهولة ، وتنظيم <a class="font-bold"> الدروس </a> وإدارة
+        <a class="font-bold"> الجدول الزمني</a>.
+        تحافظ واجهتنا سهلة الاستخدام على نظامك وتحكمك من خلال الميزات المصممة
+        للبساطة، ويمكنك أيضًا <a class="font-bold"> ربط المستخدمين </a>
+        بمدارسك، مما يضمن حصول الجميع على حق الوصول وفقًا لدورهم. حتى تتمكن من
+        التركيز على الأساسيات.
+      </h6>
+
+      <div class="grid gap-8">
+        <h1>
+          <a class="flex items-center">
+            معنا
+            <img src="img/fire.png" class="w-8 h-8 ml-2" />
+          </a>
+          أنت لست محدودا
+        </h1>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
+            <h3 class="flex items-center gap-4 font-medium">
+              <img src="img/anytime.png" class="min-w-6 min-h-6 max-w-6 max-h-6"/>
+              في كل لحظة
+            </h3>
+            <h6>
+              بفضل خوادمنا التي لا تتوقف عن العمل، يمكنك الوصول إلى مدرستك في أي
+              وقت
+            </h6>
+          </div>
+          <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
+            <h3 class="flex items-center gap-4 font-medium">
+              <img src="img/anywhere.png" class="min-w-7 min-h-7 max-w-7 max-h-7"/>
+              من اي مكان
+            </h3>
+            <h6>
+              نظرًا لأنك لا تحتاج إلى خادم محلي، يمكنك الوصول إلى مدرستك من أي
+              مكان
+            </h6>
+          </div>
+          <div class="w-full grid gap-4 p-6 border-[0.1rem] border-gray-300 dark:border-gray-700 rounded-3xl">
+            <h3 class="flex items-center gap-4 font-medium">
+              <img src="img/anydevice.png" class="min-w-6 min-h-6 max-w-6 max-h-6"/>
+              على أي جهاز
+            </h3>
+            <h6>
+              كل ما تحتاجه هو متصفح وإنترنت، ويمكنك الوصول إلى مدرستك على أي
+              جهاز
+            </h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid gap-4">
+        <h1>إذن، ما الذي تحتاجه للبدء؟</h1>
+        <h5>
+          ما عليك سوى التقاط جهازك وفتح المتصفح والاتصال بالإنترنت - هذا كل ما
+          يتطلبه الأمر لاستخدام برامجنا الحديثة.
+          <br />
+          ابتداءً من 3000 دج شهريًا، ليس هناك وقت أفضل للبدء الآن. تجاوز منافسيك
+          في أسرع وقت ممكن!
+        </h5>
+        <h5
+          class="grid grid-cols-3 md:grid-cols-1 mt-8 text-center border-[0.075rem] border-gray-300 dark:border-gray-700 rounded-xl"
+        >
+          <div class="grid md:grid-cols-6">
+            <div class="p-4 flex-center m-auto font-medium h-14">سعر</div>
+            <div class="p-4 flex-center border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+              طلاب
+            </div>
+            <div class="p-4 flex-center border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+              دورة
+            </div>
+            <div class="p-4 h-[79px] md:h-auto flex-center border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+              جدول أوقات
+            </div>
+            <div class="p-4 flex-center border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+              تمويل
+            </div>
+            <div class="p-4 h-[79px] md:h-auto flex-center border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 font-medium">
+              ربط المستخدمين
+            </div>
+          </div>
+          <div class="grid md:grid-cols-6 border-x-[0.075rem] md:border-x-0 md:border-y-[0.075rem] border-gray-300 dark:border-gray-700">
+            <div class="p-4 font-medium">3000 دج</div>
+            <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4" />
+            </div>
+            <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4" />
+            </div>
+            <div class="p-4 h-[75px] md:h-auto border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4" />
+            </div>
+            <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4" />
+            </div>
+            <div class="p-4 h-[75px] md:h-auto border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/false.png" class="w-4" />
+            </div>
+          </div>
+          <div class="grid md:grid-cols-6">
+            <div class="p-4 font-medium">4500 دج</div>
+            <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4" />
+            </div>
+            <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4" />
+            </div>
+            <div class="p-4 h-[75px] md:h-auto border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4" />
+            </div>
+            <div class="p-4 border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4" />
+            </div>
+            <div class="p-4 h-[75px] md:h-auto border-t-[0.075rem] md:border-t-0 md:border-r-[0.075rem] border-gray-300 dark:border-gray-700 flex-center">
+              <img src="img/true.png" class="w-4" />
+            </div>
+          </div>
+        </h5>
+        <h6 class="text-center text-micro">
+          الوصول إلى جميع الميزات: 4500 دج/الشهر. استثناء ربط المستخدم: 3000
+          دج/شهر، يجب عليك الاتصال بنا قبل وبعد الدفع.
+        </h6>
+      </div>
+
+      <div>
+        <div id="FAQsLeft" class="w-full space-y-16">
+          <div class="space-y-2">
+            <h6 class="font-bold text-gray-400">الأسئلة الشائعة</h6>
+            <h1>دعونا نلقي نظرة على الأسئلة الأكثر شيوعا</h1>
+          </div>
+          <div class="grid gap-2">
+            <h5>تحتاج المزيد من المعلومات ؟</h5>
+            <a href="tel:+213698467691" class="btn-white mt-4">
+              اتصل بنا <img src="img/contact.png" class="w-4 mr-4" />
+            </a>
+          </div>
+        </div>
+        <h5 class="grid gap-4 mt-8">
+          <div class="flex-between gap-2 p-2 grid border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v">
+            <svg class="w-4 h-4 mx-1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32">
+              <path
+                fill="currentColor"
+                d="M13.5 3C7.701 3 3 7.701 3 13.5S7.701 24 13.5 24c2.45 0 4.703-.839 6.489-2.244l6.878 6.878a1.25 1.25 0 1 0 1.768-1.768l-6.879-6.878A10.455 10.455 0 0 0 24 13.5C24 7.701 19.299 3 13.5 3Zm-8 10.5a8 8 0 1 1 16 0a8 8 0 0 1-16 0Z"></path>
+            </svg>
+            <input
+              id="searchFAQs"
+              type="text"
+              placeholder="ابحث عن أسئلتك" class="w-full"
+            />
+          </div>
+          <ul id="FAQs" class="overflow-y-auto space-y-4">
+            <li class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
+              <h5 class="flex-between">
+                ما هي الإضافات التي يجلبها برنامجك إلى مدرستي؟
+              </h5>
+              <hr>
+              <p class="mini-text smooth">
+                يعمل برنامجنا على تبسيط المهام وتحسين الاتصال وإدارة البيانات
+                وتحسين المشاركة وتوفير التخصيص لإدارة المدرسة بشكل فعال.
+                مما يمنحك فرصة للتغلب على منافسيك
+              </p>
+            </li>
+            <li class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
+              <h5 class="flex-between">
+                ما هو حجم المدرسة الذي توصي به لاستخدام البرنامج؟
+              </h5>
+              <hr>
+              <p class="mini-text smooth">
+                يعد برنامجنا مثاليًا للمدارس الصغيرة التي تبحث عن إدارة إدارية
+                فعالة واتصالات فعالة وعمليات مبسطة.
+              </p>
+            </li>
+            <li class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
+              <h5 class="flex-between">هل العقد ضروري لاستخدام منصتك؟</h5>
+              <hr>
+              <p class="mini-text smooth">
+                لا، توفر منصتنا اشتراكات مرنة دون الحاجة إلى عقود طويلة الأجل.
+              </p>
+            </li>
+            <li class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
+              <h5 class="flex-between">
+                ما هي طرق الدفع التي تقبلونها للاشتراكات؟
+              </h5>
+              <hr>
+              <p class="mini-text smooth">
+                نحن نقبل الدفع نقدًا وCCP وBaridi Mob للاشتراكات. تتم معالجة
+                الدفع يدوياً؛ يرجى الاتصال بنا قبل وبعد الدفع.
+              </p>
+            </li>
+            <li class="py-2.5 px-3 space-y-2.5 border-[0.1rem] border-gray-200 dark:border-gray-700 rounded-v cursor-pointer">
+              <h5 class="flex-between">ما نوع الدعم الذي تقدمه للعملاء؟</h5>
+              <hr>
+              <p class="mini-text smooth">
+                نحن نقدم دعم العملاء عبر البريد الإلكتروني والرسائل. وسيكون
+                الدعم المباشر عبر الهاتف متاحاً في المستقبل إن شاء الله.
+              </p>
+            </li>
+          </ul>
+          <div id="emptyFAQs" class="hidden text-micro text-center">
+            لا يمكن العثور على سؤالك؟
+
+            <a href="tel:+213698467691" class="cursor-pointer">
+              اتصل بنا: <a dir="ltr">+213 6 98 46 76 91</a>
+            </a>
+          </div>
+        </h5>
+      </div>
+    </div>
+
+    <script async="">
+      const $ = (e) => document.querySelector(e);
+      const eClass = (e) => (e?.classList ? e : $(e)).classList;
+      const hide = (i) => eClass(i).add("hidden");
+      const show = (i) => eClass(i).remove("hidden");
+
+      if (localStorage.dark == "true") {
+        eClass("html").add("dark");
+        hide("#moon");
+        show("#sun");
+      }
+
+      const result = (query) => {
+        $("#FAQs").style.height = `${$("#FAQsLeft").clientHeight - 87.2} px`;
+        const FAQs = $("#FAQs").children;
+
+        for (const FAQ of FAQs) {
+          const child = (i) => FAQ.children[i];
+
+          if (
+            `${child(0)?.innerText.toLowerCase()} ${child(
+              2
+            )?.innerText.toLowerCase()}`.includes(query.toLowerCase())
+          ) {
+            show(FAQ);
+          } else {
+            hide(FAQ);
+          }
+
+          const emptyFAQs = Array.from(FAQs).every(({ classList }) =>
+            classList.contains("hidden")
+          );
+          if (emptyFAQs) {
+            show("#emptyFAQs");
+          } else {
+            hide("#emptyFAQs");
+          }
+        }
+      };
+
+      $("#searchFAQs").addEventListener("input", ({ srcElement }) =>
+        result(srcElement.value)
+      );
+
+      $("#moon").addEventListener("click", () => {
+        eClass("html").add("dark");
+        localStorage.dark = true;
+        hide("#moon");
+        show("#sun");
+      });
+
+      $("#sun").addEventListener("click", () => {
+        eClass("html").remove("dark");
+        localStorage.dark = false;
+        show("#moon");
+        hide("#sun");
+      });
+    </script>
+  </body>
+</html>
