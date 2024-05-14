@@ -1,6 +1,6 @@
-# Presentation Website for SSM 
+# Presentation Website for ProEcole 
 
-the url : [proecole.com](https://proecole.com)
+the url : [ProEcole.com](https://proecole.com)
 
 ### Features :
 ```
